@@ -5,7 +5,7 @@
 @section('tituloPagina','Produtos')
 
 @section('conteudo')
-
+<div class="container-fluid" id="gridContainer" >
 <table class="table table-light table-striped">
         <thead>
             <tr>
@@ -35,6 +35,7 @@
             @endforeach
         </tbody>
 </table>
+</div>
 <div class="pagination">
     {{$produtoLista->links()}}
 </div>
