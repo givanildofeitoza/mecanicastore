@@ -12,4 +12,9 @@ class produtosController extends Controller
         $produtoLista = (new Produto)->obterTodos();
         return View('Estoque.dashBoardProdutos',compact('produtoLista'));       
     }
+    public function produtosDelete($id)
+    {       
+        (new Produto)->ExcluirProduto($id); 
+        return  redirect('Estoque.dashBoardProdutos')->with('msgRetorno','Produto excluído com sucesso!');       
+    }
 }

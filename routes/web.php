@@ -19,7 +19,12 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/dashboard', function () {
+    return view('index');
+});
+
 Route::get('/ProdutosTodos',[produtosController::class,'produtosShow'])->middleware('auth');
+Route::delete('/ExcluirProduto/{id}',[produtosController::class,'produtosDelete'])->middleware('auth');
 
 // Route::middleware([
 //     'auth:sanctum',

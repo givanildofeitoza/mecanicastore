@@ -28,8 +28,21 @@
                 <td>{{$produto->preco}}</td>
                 <td>{{$produto->situacao}}</td>
                 <td>
-                    <button class="btn btn-primary btn-sm"><i class="bi bi-recycle"></i>Alterar</button>
-                    <button class="btn btn-danger btn-sm"><i class="bi bi-trash-fill"></i>Excluir</button>
+                 <div class="dropdown">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Opções
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-recycle"></i> Alterar</a></li>
+                        <li>
+                            <form action="/ExcluirProduto/{{$produto->id}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-light"><i class="bi bi-trash">Deletar</i></button>
+                            </form>
+                        </li>                       
+                    </ul>
+                    </div>                     
                 </td>
             </tr>
             @endforeach

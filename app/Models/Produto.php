@@ -14,11 +14,18 @@ class Produto extends Model
 
     public function obterTodos() 
     {
-        return $this::paginate(3);
+        return Self::paginate(1);
     }
 
     public function obterPorId($id) 
     {
         return $this::FindOrFail(id)->get();
     }
+
+    public function ExcluirProduto($id) 
+    {
+        Self::findOrfail($id)->Delete();       
+        
+    }
+
 }
