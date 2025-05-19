@@ -7,7 +7,7 @@
 @section('conteudo')
 
 <table class="table table-light table-striped">
-        <thead class="table-dark">
+        <thead>
             <tr>
                 <th>Código</th>
                 <th>Descrição</th>
