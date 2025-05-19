@@ -14,7 +14,7 @@ class Produto extends Model
 
     public function obterTodos() 
     {
-        return $this::get()->all();
+        return $this::paginate(1);
     }
 
     public function obterPorId($id) 

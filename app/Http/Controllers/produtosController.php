@@ -9,7 +9,7 @@ class produtosController extends Controller
 {
     public function produtosShow()
     {       
-        $produtos = (new Produto)->obterTodos();
-        return View('Estoque.dashBoardProdutos',['ProdutoLista'=>$produtos]);
+        $produtoLista = (new Produto)->obterTodos();
+        return View('Estoque.dashBoardProdutos',compact('produtoLista'));       
     }
 }

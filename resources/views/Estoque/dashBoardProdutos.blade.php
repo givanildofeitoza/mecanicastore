@@ -19,7 +19,7 @@
             </tr>
         </thead>
         <tbody>           
-           @foreach($ProdutoLista as $produto)
+           @foreach($produtoLista as $produto)
             <tr>
                 <td>{{$produto->codigo}}</td>
                 <td>{{$produto->descricao}}</td>
@@ -34,6 +34,8 @@
             </tr>
             @endforeach
         </tbody>
-    </table>
-
+</table>
+<div class="pagination">
+    {{$produtoLista->links()}}
+</div>
 @endsection;
