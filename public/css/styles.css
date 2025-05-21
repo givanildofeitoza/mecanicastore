@@ -11262,3 +11262,14 @@ footer  {
     width: 100%;
     padding: 10px;
 }
+
+.botoesGridControle{
+  list-style: none;
+  display: flex;
+   margin-bottom: 0rem;
+  padding-left: 0rem;
+  
+}
+.botoesGridControle li {  
+  padding-right: 10px;
+}

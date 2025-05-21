@@ -14,7 +14,7 @@ class Produto extends Model
 
     public function obterTodos() 
     {
-        return Self::paginate(1);
+        return Self::where('situacao','=','Normal')-> paginate(3);
     }
 
     public function obterPorId($id) 
@@ -24,8 +24,9 @@ class Produto extends Model
 
     public function ExcluirProduto($id) 
     {
-        Self::findOrfail($id)->Delete();       
-        
+       $produto = Self::findOrfail($id);       
+       $produto->situacao = "Excluido";
+       $produto->Save(); 
     }
 
 }

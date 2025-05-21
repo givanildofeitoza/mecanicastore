@@ -22,9 +22,9 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('index');
 });
-
 Route::get('/ProdutosTodos',[produtosController::class,'produtosShow'])->middleware('auth');
 Route::delete('/ExcluirProduto/{id}',[produtosController::class,'produtosDelete'])->middleware('auth');
+Route::post('/alterarProdutos',[produtosController::class,'produtosEditar'])->middleware('auth');
 
 // Route::middleware([
 //     'auth:sanctum',

@@ -15,6 +15,11 @@ class produtosController extends Controller
     public function produtosDelete($id)
     {       
         (new Produto)->ExcluirProduto($id); 
-        return  redirect('Estoque.dashBoardProdutos')->with('msgRetorno','Produto excluído com sucesso!');       
+        return  redirect('ProdutosTodos')->with('msgRetorno','Produto excluído com sucesso!');       
+    }
+    public function produtosEditar()
+    {       
+        //(new Produto)->ExcluirProduto($id); 
+        return  View('Estoque.alterarProdutos');       
     }
 }

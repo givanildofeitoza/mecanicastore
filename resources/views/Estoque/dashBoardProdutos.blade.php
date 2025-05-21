@@ -12,8 +12,8 @@
                 <th>Código</th>
                 <th>Descrição</th>
                 <th>Unidade</th>
-                <th>Custo</th>
-                <th>Preço</th>
+                <th>Custo R$</th>
+                <th>Preço R$</th>
                 <th>Situação</th>
                 <th>Ações</th>
             </tr>
@@ -25,24 +25,25 @@
                 <td>{{$produto->descricao}}</td>
                 <td>{{$produto->unidade}}</td>
                 <td>{{$produto->custo}}</td>
-                <td>{{$produto->preco}}</td>
+                <td>{{$produto->precoVenda}}</td>
                 <td>{{$produto->situacao}}</td>
                 <td>
-                 <div class="dropdown">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Opções
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#"><i class="bi bi-recycle"></i> Alterar</a></li>
+                   <ul class="botoesGridControle"> 
                         <li>
-                            <form action="/ExcluirProduto/{{$produto->id}}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-light"><i class="bi bi-trash">Deletar</i></button>
+                            <form action="/alterarProdutos" method="POST">
+                                    @csrf   
+                                    @method('POST')                                 
+                                    <button class="btn btn-secondary"><i class="bi bi-pencil-fill"></i>Editar</button>
                             </form>
-                        </li>                       
+                        </li>
+                        <li>       
+                            <form action="/ExcluirProduto/{{$produto->id}}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger"><i class="bi bi-trash"></i>Deletar</button>
+                            </form>
+                        </li>
                     </ul>
-                    </div>                     
                 </td>
             </tr>
             @endforeach
