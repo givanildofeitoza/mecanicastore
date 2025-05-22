@@ -83,6 +83,7 @@ function abrirModal(botao)
     //document.getElementById("precoVendaFinanciamento").value = precoVendaFinanciamento;
     //document.getElementById("ultimoPrecoVenda").value = ultimoPrecoVenda;
     document.getElementById("origem").value = origem;
+    document.getElementById("id").value = id;
     document.getElementById("tributacao").value = tributacao;
     document.getElementById("tributacaoIpi").value = tributacaoIpi;
     document.getElementById("tributacaoCofins").value = tributacaoCofins;
@@ -102,9 +103,9 @@ function abrirModal(botao)
     document.getElementById("ipi").value = ipi;
     document.getElementById("tributacaoPis").value = tributacaoPis;
     document.getElementById("pis").value = pis;          
-    document.getElementById("dataCadastro").value = dataCadastro;  
-        
+    document.getElementById("dataCadastro").value = dataCadastro;          
 };
+
 function fecharModal(){    
     document.getElementById("meuModal").style.display = "none";
 }

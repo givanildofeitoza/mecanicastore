@@ -5,6 +5,13 @@
 @section('tituloPagina','Produtos')
 
 @section('conteudo')
+<div class="container">
+    @if(session('msgRetorno'))
+     <div class="alert alert-success" role="alert">
+       <p>{{session('msgRetorno')}}</P>
+    </div>
+    @endif
+</div>
 <div class="container-fluid" id="gridContainer" >
 <table class="table table-light table-striped">
         <thead>
@@ -95,10 +102,14 @@
     </div>
     <div class="modal-body">
         <div class="container mt-6">   
-            <form action="/ProdutosTodos/alterarProdutos/{{$produto->id}}" name="frmShow" method="POST">
+            <form action="/ProdutosTodos/alterar-produto/" name="frmShow" method="POST">
                 @csrf   
-                @method('GET')  
+                @method('POST')  
                 <div class="row">
+                    <div class="col-md-6">                        
+                    <label for="id" class="form-label">Chave</label>
+                    <input type="text" class="form-control" id="id" name="id" value="{{$produto->id}}">
+                    </div>
                     <div class="col-md-6">
                         <label for="codigo" class="form-label">Código</label>
                         <input type="text" class="form-control" id="codigo" name="codigo" value="{{$produto->codigo}}">
@@ -208,7 +219,7 @@
                     <input type="date" class="form-control" id="dataCadastro" name="dataCadastro" value="{{$produto->dataCadastro}}">
                 </div>
 
-                <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+                <button type="submit" class="btn btn-primary mt-3">Alterar</button>
             </form>
         </div>
     </div>

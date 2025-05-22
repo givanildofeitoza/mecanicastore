@@ -30,8 +30,14 @@ class Produto extends Model
        $produto->situacao = "Excluido";
        $produto->Save(); 
     }
-      public function showProduto($id)
-     {
+    
+    public function alterar($request)
+    {
+        Self::findOrFail($request['id'])->Update($request->all());
+    } 
+
+    public function showProduto($id)
+    {
          $item = this::findOrFail($id);
          $content = "<p>Título: {$item->title}</p><p>Descrição: {$item->description}</p>"; // Conteúdo dinâmico
          return  $content; 

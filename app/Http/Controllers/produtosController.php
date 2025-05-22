@@ -17,11 +17,12 @@ class produtosController extends Controller
         (new Produto)->ExcluirProduto($id); 
         return  redirect('ProdutosTodos')->with('msgRetorno','Produto excluído com sucesso!');       
     }
-    public function produtosEditar($id)
-    {       
-       $produto = (new Produto)->obterPorId($id); 
-           
-       return  View('Estoque.alterarProdutos',['prd'=>$produto]);       
+    public function produtosEditar(request $request)
+    {      
+        $modelProduto = (new Produto);
+        $modelProduto->alterar($request);
+        $produtoAlterado = $modelProduto->obterTodos();  
+       return  redirect('ProdutosTodos')->with('msgRetorno','Produto '.$request['descricao'].' alterado com sucesso!');   ;       
     }
     public function show($id)
     {
