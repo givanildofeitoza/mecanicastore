@@ -19,7 +19,7 @@ class Produto extends Model
 
     public function obterPorId($id) 
     {
-        return $this::FindOrFail(id)->get();
+        return $this::FindOrFail($id)->toArray();
     }
 
     public function ExcluirProduto($id) 

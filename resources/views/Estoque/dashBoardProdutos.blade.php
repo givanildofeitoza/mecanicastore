@@ -29,10 +29,10 @@
                 <td>{{$produto->situacao}}</td>
                 <td>
                    <ul class="botoesGridControle"> 
-                        <li>
-                            <form action="/alterarProdutos" method="POST">
+                        <li>                            
+                            <form action="/ProdutosTodos/alterarProdutos/{{$produto->id}}" method="POST">
                                     @csrf   
-                                    @method('POST')                                 
+                                    @method('GET')                         
                                     <button class="btn btn-secondary"><i class="bi bi-pencil-fill"></i>Editar</button>
                             </form>
                         </li>
@@ -53,4 +53,4 @@
 <div class="pagination">
     {{$produtoLista->links()}}
 </div>
-@endsection;
+@endsection

@@ -2,13 +2,12 @@
 
 @section('titulo','Mecanica Store')
 
-@section('tituloPagina')
-<a href="/ProdutosTodos">Produtos → Cadastro</a>
-@endsection;
+@section('tituloPagina','Alterar Produtos')
 
 @section('conteudo')
-<div class="container mt-6">     
-        <form>
+<h1>{{ $prd['descricao'] }}</h1>
+<!-- <div class="container mt-6">   
+           <form>
             <div class="row">
                 <div class="col-md-6">
                     <label for="codigo" class="form-label">Código</label>
@@ -92,5 +91,5 @@
 
             <button type="submit" class="btn btn-primary mt-3">Enviar</button>
         </form>
-    </div>
-@endsection;
+    </div> -->
+@endsection
