@@ -5,7 +5,7 @@
 @section('tituloPagina','Alterar Produtos')
 
 @section('conteudo')
-<h1>{{ $prd['descricao'] }}</h1>
+<h1>{{ $prd->descricao }}</h1>
 <!-- <div class="container mt-6">   
            <form>
             <div class="row">

@@ -12,6 +12,8 @@ class Produto extends Model
     protected $dates = ['date'];
     protected $guarded = ['id'];
 
+   
+
     public function obterTodos() 
     {
         return Self::where('situacao','=','Normal')-> paginate(3);
@@ -19,7 +21,7 @@ class Produto extends Model
 
     public function obterPorId($id) 
     {
-        return $this::FindOrFail($id)->toArray();
+        return $this::FindOrFail($id);
     }
 
     public function ExcluirProduto($id) 
@@ -28,5 +30,11 @@ class Produto extends Model
        $produto->situacao = "Excluido";
        $produto->Save(); 
     }
+      public function showProduto($id)
+     {
+         $item = this::findOrFail($id);
+         $content = "<p>Título: {$item->title}</p><p>Descrição: {$item->description}</p>"; // Conteúdo dinâmico
+         return  $content; 
+     }
 
 }
