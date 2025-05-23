@@ -26,7 +26,7 @@ class produtosController extends Controller
     }
     public function show($id)
     {
-        $content= showProduto($id);
-       return   response()->json(['content' => $content]);
+        $content= (new Produto)->showProduto($id);
+       return   view('estoque.alterarProdutos',['prd' => $content]);
     }
 }

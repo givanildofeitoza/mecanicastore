@@ -25,6 +25,7 @@ Route::get('/dashboard', function () {
 Route::get('/ProdutosTodos',[produtosController::class,'produtosShow'])->middleware('auth');
 Route::delete('/ExcluirProduto/{id}',[produtosController::class,'produtosDelete'])->middleware('auth');
 Route::post('/ProdutosTodos/alterar-produto',[produtosController::class,'produtosEditar'])->middleware('auth');
+Route::get('/show-produto/{id}',[produtosController::class,'show'])->middleware('auth');
 
 // Route::middleware([
 //     'auth:sanctum',

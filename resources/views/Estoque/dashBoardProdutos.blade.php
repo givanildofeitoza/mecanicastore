@@ -37,7 +37,12 @@
                 <td>
                    <ul class="botoesGridControle"> 
                         <li>
-                            <button type="button" class="btn btn-secondary MeuModalBtn" data-bs-toggle="modal"  data-bs-target="#exampleModal"
+                            <form action="/show-produto/{{$produto->id}}" method="POST">
+                                    @csrf
+                                    @method('GET')
+                                    <button class="btn btn-danger"><i class="bi bi-trash"></i>Editar</button>
+                            </form>
+                            <!-- <button type="button" class="btn btn-secondary MeuModalBtn" data-bs-toggle="modal"  data-bs-target="#exampleModal"
                             data-id="{{ $produto->id }}"
                             data-situacao="{{ $produto->situacao }}"
                             data-codigo="{{ $produto->codigo }}"
@@ -68,7 +73,7 @@
                             data-dataCadastro="{{ $produto->dataCadastro }}"
                             onclick="abrirModal(this)">  
                             <i class="bi bi-pencil-fill"></i>Editar
-                            </button>                         
+                            </button>                          -->
                         </li>
                         <li>       
                             <form action="/ExcluirProduto/{{$produto->id}}" method="POST">

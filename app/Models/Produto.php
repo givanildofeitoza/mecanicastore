@@ -38,9 +38,9 @@ class Produto extends Model
 
     public function showProduto($id)
     {
-         $item = this::findOrFail($id);
-         $content = "<p>Título: {$item->title}</p><p>Descrição: {$item->description}</p>"; // Conteúdo dinâmico
-         return  $content; 
+         $item = Self::findOrFail($id);
+         
+         return  $item; 
      }
 
 }
