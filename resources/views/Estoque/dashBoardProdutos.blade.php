@@ -36,12 +36,7 @@
                 <td>{{$produto->situacao}}</td>
                 <td>
                    <ul class="botoesGridControle"> 
-                        <li>                            
-                            <form action="/ProdutosTodos/show/{{$produto->id}}" method="POST">
-                                    @csrf   
-                                    @method('GET')                       
-                                    
-                            </form>
+                        <li>
                             <button type="button" class="btn btn-secondary MeuModalBtn" data-bs-toggle="modal"  data-bs-target="#exampleModal"
                             data-id="{{ $produto->id }}"
                             data-situacao="{{ $produto->situacao }}"

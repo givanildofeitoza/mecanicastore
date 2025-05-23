@@ -82,6 +82,7 @@ function abrirModal(botao)
     //document.getElementById("ultimoCusto").value = ultimoCusto;
     //document.getElementById("precoVendaFinanciamento").value = precoVendaFinanciamento;
     //document.getElementById("ultimoPrecoVenda").value = ultimoPrecoVenda;
+    
     document.getElementById("origem").value = origem;
     document.getElementById("id").value = id;
     document.getElementById("tributacao").value = tributacao;
