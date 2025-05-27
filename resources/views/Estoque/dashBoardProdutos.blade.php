@@ -13,6 +13,9 @@
     @endif
 </div>
 <div class="container-fluid" id="gridContainer" >
+<div class="container-fluid menu-controle-top">
+    <button class="btn btn-success"><i class="bi bi-plus-square"></i>Novo Produto</button>
+</div>
 <table class="table table-light table-striped">
         <thead>
             <tr>
@@ -40,7 +43,7 @@
                             <form action="/show-produto/{{$produto->id}}" method="POST">
                                     @csrf
                                     @method('GET')
-                                    <button class="btn btn-danger"><i class="bi bi-trash"></i>Editar</button>
+                                    <button class="btn btn-secondary"><i class="bi bi-pencil"></i>Editar</button>
                             </form>
                             <!-- <button type="button" class="btn btn-secondary MeuModalBtn" data-bs-toggle="modal"  data-bs-target="#exampleModal"
                             data-id="{{ $produto->id }}"

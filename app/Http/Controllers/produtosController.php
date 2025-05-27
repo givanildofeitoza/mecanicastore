@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Produto;
+use App\Models\Grupo;
+use App\Models\SubGrupo;
 
 class produtosController extends Controller
 {
@@ -27,6 +29,12 @@ class produtosController extends Controller
     public function show($id)
     {
         $content= (new Produto)->showProduto($id);
-       return   view('estoque.alterarProdutos',['prd' => $content]);
+        $grupoatual = Grupo::find($content->codigoGrupo);
+        $subGrupoatual = SubGrupo::find($content->codigoSubGrupo);
+        $grupoTodos = Grupo::all();
+       return   view('estoque.alterarProdutos',['prd' => $content, 
+                'grupoatual'=>$grupoatual, 
+                'subGrupoatual'=> $subGrupoatual,
+                'grupoTodos'=>$grupoTodos]);
     }
 }

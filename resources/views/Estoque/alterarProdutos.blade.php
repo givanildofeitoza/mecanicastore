@@ -58,11 +58,24 @@
                     <div class="row mt-3">
                         <div class="col-md-6">
                             <label for="codigoGrupo" class="form-label">Código Grupo</label>
-                            <input type="text" class="form-control" id="codigoGrupo" name="codigoGrupo" value="{{$prd->codigoGrupo}}">
+                            <!-- <input type="text" class="form-control" id="codigoGrupo" name="codigoGrupo" value="{{$prd->codigoGrupo}}"> -->
+                            <select  class="form-select" id="grupo" name="grupo"  >
+                                <option value="{{$prd->codigoGrupo}}">{{$grupoatual->gruponome}}</option>
+                              <option value="{{$prd->codigosubGrupo}}">{{$subGrupoatual->subgruponome}}</option>
+                                @foreach($grupoTodos as $gt)
+                                  <option value="{{$gt->id}}">{{$gt->gruponome}}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="col-md-6">
                             <label for="codigoSubGrupo" class="form-label">Código SubGrupo</label>
-                            <input type="text" class="form-control" id="codigoSubGrupo" name="codigoSubGrupo" value="{{$prd->codigoSubGrupo}}">
+                            <!-- <input type="text" class="form-control" id="codigoSubGrupo" name="codigoSubGrupo" value="{{$prd->codigoSubGrupo}}"> -->
+                               <select  class="form-select" id="grupo" name="grupo">
+                                <option value="{{$prd->codigosubGrupo}}">{{$subGrupoatual->subgruponome}}</option>
+                                <option value="saab">Saab</option>
+                                <option value="mercedes">Mercedes</option>
+                                <option value="audi">Audi</option>
+                            </select>
                         </div>
                     </div>
                 </div>

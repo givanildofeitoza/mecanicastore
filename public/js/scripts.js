@@ -112,4 +112,20 @@ function fecharModal(){
 }
 //FIM FUNÇÕES DO MODAL DE PRODUTOS
 
+document.addEventListener("DOMContentLoaded", () => {
+    const selectElement = document.getElementById("grupo");
+
+    if (selectElement) {
+        selectElement.addEventListener("change", (event) => {
+            alert(`Você selecionou: ${event.target.value}`);
+        });
+    } else {
+        console.error("Elemento #grupo não encontrado!");
+    }
+});
+
+
+
+ function selectGrupo(){
    
+ }  
