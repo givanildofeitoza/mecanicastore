@@ -51,7 +51,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="codigotipo" class="form-label">Código Tipo</label>
-                            <input type="text" class="form-control" id="codigotipo" name="codigotipo" value="{{$prd->codigotipo}}">
+                            <input type="text" class="form-control" id="codigotipo" name="codigotipo"  value="{{$prd->codigotipo}}">
                         </div>
                     </div>
 
@@ -59,22 +59,22 @@
                         <div class="col-md-6">
                             <label for="codigoGrupo" class="form-label">Código Grupo</label>
                             <!-- <input type="text" class="form-control" id="codigoGrupo" name="codigoGrupo" value="{{$prd->codigoGrupo}}"> -->
-                            <select  class="form-select" id="grupo" name="grupo"  >
-                                <option value="{{$prd->codigoGrupo}}">{{$grupoatual->gruponome}}</option>
-                              <option value="{{$prd->codigosubGrupo}}">{{$subGrupoatual->subgruponome}}</option>
+                            <select  class="form-select selectGrupo" id="grupo" name="grupo" >                                
+                                @if(isset($grupoatual->gruponome ))
+                                <option value="{{$prd->codigoGrupo}}">{{$grupoatual->gruponome}}</option>                              
                                 @foreach($grupoTodos as $gt)
-                                  <option value="{{$gt->id}}">{{$gt->gruponome}}</option>
-                                @endforeach
+                                    <option value="{{$gt->id}}">{{$gt->gruponome}}</option>
+                                @endforeach                                
+                              @endif  
                             </select>
                         </div>
                         <div class="col-md-6">
                             <label for="codigoSubGrupo" class="form-label">Código SubGrupo</label>
                             <!-- <input type="text" class="form-control" id="codigoSubGrupo" name="codigoSubGrupo" value="{{$prd->codigoSubGrupo}}"> -->
-                               <select  class="form-select" id="grupo" name="grupo">
-                                <option value="{{$prd->codigosubGrupo}}">{{$subGrupoatual->subgruponome}}</option>
-                                <option value="saab">Saab</option>
-                                <option value="mercedes">Mercedes</option>
-                                <option value="audi">Audi</option>
+                               <select  class="form-select" id="subgrupo" name="subgrupo">
+                                 @if(isset($subGrupoatual->subgruponome))
+                                <option value="{{$prd->codigosubGrupo}}">{{$subGrupoatual->subgruponome}}</option>                                
+                                @endif
                             </select>
                         </div>
                     </div>

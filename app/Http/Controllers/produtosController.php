@@ -37,4 +37,9 @@ class produtosController extends Controller
                 'subGrupoatual'=> $subGrupoatual,
                 'grupoTodos'=>$grupoTodos]);
     }
+    function obterSubgrupPorIdGrupo($id){       
+        $subGrupo = SubGrupo::where('idgrupo',$id)->Get();
+
+        return response()->json($subGrupo);
+    }
 }

@@ -109,23 +109,26 @@ function abrirModal(botao)
 
 function fecharModal(){    
     document.getElementById("meuModal").style.display = "none";
-}
+};
 //FIM FUNÇÕES DO MODAL DE PRODUTOS
 
-document.addEventListener("DOMContentLoaded", () => {
-    const selectElement = document.getElementById("grupo");
+//chamar api
+ document.getElementById("grupo").addEventListener("change", (event) => {           
+    const grupo = event.target.value;
+    fetch('/obter-Subgrupos/'+grupo)
+    .then(response => response.json())
+    .then(data => {
+         const select = document.getElementById("subgrupo"); 
+         while (select.options.length > 0) {
+                select.remove(0);
+         }
+         data.forEach(x => {           
+            const option = document.createElement("option");
+            option.value = x.id;
+            option.textContent = x.subgruponome;
+            select.appendChild(option);
+        });        
+    })
+    .catch(error => console.error("Erro ao buscar dados:", error));
 
-    if (selectElement) {
-        selectElement.addEventListener("change", (event) => {
-            alert(`Você selecionou: ${event.target.value}`);
-        });
-    } else {
-        console.error("Elemento #grupo não encontrado!");
-    }
-});
-
-
-
- function selectGrupo(){
-   
- }  
+ });
